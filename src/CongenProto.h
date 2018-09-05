@@ -104,7 +104,7 @@ for new Congen routines *must* be appended to this file */
 #define cpyprm cpyprm_
 #define trace trace_
 #define chmceil chmceil_
-#define c_print_atom c_print_atom__
+#define c_print_atom c_print_atom_
 #define getseg getseg_
 
 #endif
@@ -573,9 +573,9 @@ void
  ) 
 ;
 #if defined (__FORT_UNDERSCORE__)
-#define fill_grid1 fill_grid1__
+#define fill_grid1 fill_grid1_
 #endif
-/* No prototype for fill_grid1 - please supply one */
+
 void fillatm_c ( 
 struct atom **atp , 
 int resno , 
@@ -1663,10 +1663,12 @@ void ecchkcont(int *iatm, int *atomno, float *ori,
                float *rcontact, float *startphi,
                float *lastphi, logical *impact, int *sidehits,
                int *resbya, int *cntnbx, short int *nbxa, logical *qside);
+/*
 void fill_grid1(short int *space_grid, logical *excluded,
                 int *cntnbx, logical *ingrid, short int *nbxa,
                 int *nexthd, int *clshd, int *clstl, int *nextcls,
                 int *clsatm, int *resbya, float *radius);
+*/
 int nindx(int *number, int *narray, int *nlen);
 void abmpad(char string[], int num);
 void  dwprangl(int *it, int *jt, int *kt, short int parm_no[100][100],
