@@ -9,10 +9,10 @@ C     N if KEY comes after the last element.
       IMPLICIT NONE
 
 C -- Temp
-#include "params.inc"
-#include "coords.inc"
-#include "getpar.inc"
-#include "sidetop.inc"
+      include "params.inc"
+      include "coords.inc"
+      include "getpar.inc"
+      include "sidetop.inc"
 C -- End Temp
 
 

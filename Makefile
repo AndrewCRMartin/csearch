@@ -1,5 +1,5 @@
 COPT = -g -Wall -ansi -pedantic -D__FORT_UNDERSCORE__
-FOPT = -g -x f77-cpp-input
+FOPT = -g 
 LOPTS = -g -lm 
 
 COBJS = \
@@ -14,7 +14,7 @@ cnsbblist.o cnsfblist.o codes.o constatm.o constclmp.o copyfarray.o \
 copyst.o cpfbest.o cpftbest.o cpintobst.o cprint1.o cpyprm.o \
 csearch.o debug.o delatmfgrd.o delatmsfgrd.o die.o dispatch.o dot.o \
 dststop.o dump_grid.o ecntrl.o ephi.o evaluate_f.o explcntcts.o  \
-extnlims.o fill2.o fill4.o fill_grid.o fillatm_c.o fillatm_ca.o  \
+extnlims.o fill2.o fill4.o fill_grid.o fill_grid1.o fillatm_c.o fillatm_ca.o  \
 fillatm_cb.o fillatm_h.o fillatm_ht1.o fillatm_n.o fillatm_o.o  \
 fillbbatms.o fillbndang.o filspc.o finbbone.o finchncls.o finclsatm.o  \
 finres.o finsidchn.o fixctero.o fixinitgrd.o fixnterh.o fixpdb.o  \
@@ -55,14 +55,14 @@ interpa.o maxr.o merfi.o mkprolrng.o nindx.o rnhbsrch.o rnnbsrch.o  \
 schdls.o srchnat1.o srchnatm1.o stuphb1.o
 
 csearch : $(COBJS) $(FOBJS)
-	f77 -o csearch $(COBJS) $(FOBJS) $(LOPTS)
+	gfortran -o csearch $(COBJS) $(FOBJS) $(LOPTS)
 
 
 .c.o :
 	cc $(COPT) -o $@ -c $<
 
 .f.o :
-	g77 $(FOPT) -o $@ -c $<
+	gfortran $(FOPT) -o $@ -c $<
 
 #.f.o :
 #	f2c $(FOPT) $<

@@ -28,8 +28,8 @@ COM OMUPD BNJ
  
       REAL RMAX
 C
-#include "dbg.inc"
-#include "grid.inc"
+      include "dbg.inc"
+      include "grid.inc"
       REAL CENTER(3)
 C
       CENTER(1) = OC(1) + ECX(1)*AVOIDXCENTER

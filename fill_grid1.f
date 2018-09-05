@@ -28,6 +28,7 @@ C
 C             If the space grid overflows, it is expanded to a larger
 C     size.
 C
+C OMUPD rkw 29/11/93 Improved QA metrics
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
       SUBROUTINE FILL_GRID1(SPACE_GRID,EXCLUDED,CNTNBX,INGRID,NBXA,
      +                      NEXTHD,CLSHD,CLSTL,NEXTCLS,CLSATM,RESBYA,
@@ -37,27 +38,32 @@ C     Initializes the space grid, along with the free lists used to
 C     store linked lists of atoms. Also, the excluded array is also
 C     cleared.
 C
-#include "impnone.inc"
-#include "grid.inc"
+      IMPLICIT NONE
+
+      include "grid.inc"
+      include "params.inc"
+      include "cgen_values.inc"
+      include "coords.inc"
+      include "dbg.inc"
+      include "engpar.inc"
+      include "pstruct.inc"
+
       INTEGER*2 SPACE_GRID(NGRIDX,NGRIDY,NGRIDZ)
-      LOGICAL EXCLUDED(*)
-      INTEGER CNTNBX(*)
-      LOGICAL INGRID(*)
+      LOGICAL   EXCLUDED(*)
+      INTEGER   CNTNBX(*)
+      LOGICAL   INGRID(*)
       INTEGER*2 NBXA(MAXNBX,*)
-      INTEGER NEXTHD(*), CLSHD(*), CLSTL(*), NEXTCLS(*), CLSATM(*),
-     +        RESBYA(*)
-      REAL RADIUS(*)
-#include "params.inc"
-#include "values.inc"
-#include "coords.inc"
-#include "dbg.inc"
-#include "engpar.inc"
-#include "pstruct.inc"
+      INTEGER   NEXTHD(*), CLSHD(*), CLSTL(*), NEXTCLS(*), CLSATM(*),
+     +          RESBYA(*)
+      REAL      RADIUS(*)
 C
       INTEGER I
       INTEGER STARTNB, J, IND, DUMMY_TAIL
       INTEGER IX, IRES, IAT
-      REAL MAXR
+      REAL    MAXR
+
+      EXTERNAL FILL2, FILL4, FILLLOG, CPRINT, DIE, INFRLS, ADATMTGRD,
+     +         FIXINITGRD, CPYPRM, MAXR
 C
       CALL FILL2(SPACE_GRID,NGRIDX*NGRIDY*NGRIDZ,0)
       DO 100 I = 1, NATOMS
@@ -99,10 +105,10 @@ C
       CALL INFRLS(FREECLS,DUMMY_TAIL,NEXTCLS,NATOMS)
       DO 300 IND = 1, NATOMS
          IF (XCART(IND).NE.ANUM) THEN
-            CALL ADATMTGRD(%VAL(IND))
+            CALL ADATMTGRD(IND)
          ENDIF
   300 CONTINUE
-      CALL FIXINITGRD
+      CALL FIXINITGRD()
       DO 400 IRES = 1, NRES
          DO 350 IAT = LSTATM(IRES) + 1, LSTATM(IRES+1)
             RESBYA(IAT) = IRES
@@ -110,5 +116,6 @@ C
   400 CONTINUE
       CALL CPYPRM(VDWRAD,ATFLAG,ATCODE,RADIUS,NATOMS)
       MAXRADIUS = MAXR(RADIUS,NATOMS)
+
       RETURN
       END

@@ -18,9 +18,9 @@ COM
       INTEGER ANTE(0:2)
       REAL ORI(3), EX(3), EY(3), EZ(3)
 C
-#include "params.inc"
-#include "coords.inc"
-#include "dbg.inc"
+      include "params.inc"
+      include "coords.inc"
+      include "dbg.inc"
       REAL DOTP, RX, RY, RZ
 C
       ORI(1) = XCART(ANTE(2))

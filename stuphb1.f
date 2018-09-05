@@ -7,11 +7,11 @@ C     pertaining to hydorgen bonds are also set.
 C
       IMPLICIT NONE
  
-#include "params.inc"
-#include "values.inc"
-#include "pstruct.inc"
-#include "hbonds.inc"
-#include "cg.inc"
+      include "params.inc"
+      include "values.inc"
+      include "pstruct.inc"
+      include "hbonds.inc"
+      include "cg.inc"
  
       INTEGER DONP(*), ACCP(*)
       INTEGER I

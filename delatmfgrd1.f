@@ -4,16 +4,16 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 C
 C     Deletes atom IND from the grid.
 C
-#include "impnone.inc"
-#include "grid.inc"
+      include "impnone.inc"
+      include "grid.inc"
       INTEGER IND
       INTEGER*2 SPACE_GRID(NGRIDX,NGRIDY,NGRIDZ)
       LOGICAL INGRID(*)
       INTEGER NEXTHD(*), CLSHD(*), CLSTL(*), NEXTCLS(*), CLSATM(*)
       CHARACTER*512 BUFFER
-#include "params.inc"
-#include "coords.inc"
-#include "dbg.inc"
+      include "params.inc"
+      include "coords.inc"
+      include "dbg.inc"
 C
       INTEGER IX, IY, IZ, ISPACE
       LOGICAL OUTOFBOUND

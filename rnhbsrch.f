@@ -6,13 +6,13 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
  
  
       IMPLICIT NONE
-#include "params.inc"
-#include "grid.inc"
-#include "cg.inc"
-#include "coords.inc"
-#include "engpar.inc"
-#include "pstruct.inc"
-#include "dbg.inc"
+      include "params.inc"
+      include "grid.inc"
+      include "cg.inc"
+      include "coords.inc"
+      include "engpar.inc"
+      include "pstruct.inc"
+      include "dbg.inc"
       INTEGER STARTX, STARTY, STARTZ, LASTX, LASTY, LASTZ
       INTEGER*2 SPACE_GRID(NGRIDX,NGRIDY,NGRIDZ), PARM_NO(100,100)
       INTEGER JX, JY, JZ, ISPACE, PSN, IATM, IHBOND, JHBOND, KHBOND

@@ -7,14 +7,14 @@ CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
      +                            EVDW,NEXTCLS,XIND,YIND,ZIND)
  
       IMPLICIT NONE
-#include "params.inc"
-#include "grid.inc"
-#include "cg.inc"
-#include "coords.inc"
-#include "engpar.inc"
-#include "pstruct.inc"
-#include "dbg.inc"
-#include "values.inc"
+      include "params.inc"
+      include "grid.inc"
+      include "cg.inc"
+      include "coords.inc"
+      include "engpar.inc"
+      include "pstruct.inc"
+      include "dbg.inc"
+      include "values.inc"
       REAL CUT2_SEARCH, CGIND
       INTEGER ITCIND, OFFIND, SEARCH_MODE, JX, JY, JZ, ISPACE
       INTEGER STARTX, STARTY, STARTZ, LASTX, LASTY, LASTZ

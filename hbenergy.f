@@ -3,15 +3,15 @@ C     TO EVALUATE-ENERGY-FOR-ONE-HYDROGEN-BOND
       SUBROUTINE HBENERGY(IHBOND,JHBOND,KHBOND,PARM_NO,EHB)
  
       IMPLICIT NONE
-#include "params.inc"
-#include "values.inc"
-#include "grid.inc"
-#include "cg.inc"
-#include "coords.inc"
-#include "engpar.inc"
-#include "pstruct.inc"
-#include "restop.inc"
-#include "dbg.inc"
+      include "params.inc"
+      include "values.inc"
+      include "grid.inc"
+      include "cg.inc"
+      include "coords.inc"
+      include "engpar.inc"
+      include "pstruct.inc"
+      include "restop.inc"
+      include "dbg.inc"
  
       INTEGER I1, J1, IHBOND, JHBOND, KHBOND, ICHBOND, KEYHB, NINDX
       INTEGER*2 PARM_NO(100,100)

@@ -22,16 +22,16 @@ C     If the atom, IND, does not fit in the grid, OUTOFBOUND will
 C     be returned as true so that the grid can be enlarged.
 C
       IMPLICIT NONE
-#include "grid.inc"
-#include "params.inc"
-#include "cg.inc"
-#include "coords.inc"
-#include "dbg.inc"
-#include "hbonds.inc"
-#include "values.inc"
-#include "engpar.inc"
-#include "pstruct.inc"
-#include "restop.inc"
+      include "grid.inc"
+      include "params.inc"
+      include "cg.inc"
+      include "coords.inc"
+      include "dbg.inc"
+      include "hbonds.inc"
+      include "values.inc"
+      include "engpar.inc"
+      include "pstruct.inc"
+      include "restop.inc"
  
 C Argument declarations
 

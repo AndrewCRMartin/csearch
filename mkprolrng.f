@@ -23,7 +23,7 @@ C
  
       CHARACTER*100 BUFFER
  
-#include "values.inc"
+      include "values.inc"
 C
       CALL BINSCHR(PROCONSPHI,NPROCONS,PHI,START,STOP)
  

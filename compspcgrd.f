@@ -15,9 +15,9 @@ COM
       INTEGER IX, IY, IZ
       LOGICAL OUTOFBOUND
 
-#include "params.inc"
-#include "coords.inc"
-#include "grid.inc"
+      include "params.inc"
+      include "coords.inc"
+      include "grid.inc"
 C
       IX = (XCART(IND)-XMN)*RECIPGRID + 1
       IY = (YCART(IND)-YMN)*RECIPGRID + 1
