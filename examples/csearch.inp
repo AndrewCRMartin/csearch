@@ -1,11 +1,11 @@
-RESTOP   /acrm/home/andrew/ANTIBODIES/AbM/AbM2.03SRC/ABM/DAT/topology
-PARAMS   /acrm/home/andrew/ANTIBODIES/AbM/AbM2.03SRC/ABM/DAT/params
-SIDETOP  /acrm/home/andrew/ANTIBODIES/AbM/AbM2.03SRC/ABM/DAT/sidetop
-ALAMAP   /acrm/home/andrew/ANTIBODIES/AbM/AbM2.03SRC/ABM/DAT/emapala30
-GLYMAP   /acrm/home/andrew/ANTIBODIES/AbM/AbM2.03SRC/ABM/DAT/emapgly30
-PROMAP   /acrm/home/andrew/ANTIBODIES/AbM/AbM2.03SRC/ABM/DAT/emappro30
-PROCONS  /acrm/home/andrew/ANTIBODIES/AbM/AbM2.03SRC/ABM/DAT/procns
-PGP      /acrm/home/andrew/ANTIBODIES/AbM/AbM2.03SRC/ABM/DAT/pgp
+RESTOP   ../data/topology
+PARAMS   ../data/params
+SIDETOP  ../data/sidetop
+ALAMAP   ../data/emapala30
+GLYMAP   ../data/emapgly30
+PROMAP   ../data/emappro30
+PROCONS  ../data/procns
+PGP      ../data/pgp
 !
 SEQUENCE 1yqv.pir   ! Sequence for this run
 COORDS   1yqv.pdb   ! Input structure file for this run
